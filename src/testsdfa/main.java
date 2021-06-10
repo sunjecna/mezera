@@ -14,7 +14,7 @@ public class main {
 	  public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
    
-		File file = new File("C:\\dasadsdsa.txt");
+		File file = new File("M:\\p.txt");
         FileInputStream stream = new FileInputStream(file);
         InputStreamReader in = new InputStreamReader(stream);
 		BufferedReader reader = new BufferedReader(in);
@@ -25,14 +25,18 @@ public class main {
 		int mezera = 0;
 		
 		  while((txt = reader.readLine()) != null) {
+		char [] arr = txt.toCharArray();
+			   for(int i=0;i<txt.length();i++) {
+			   if(Character.isWhitespace(arr[i]))
+				   mezera++;
+			   }
 			  String[] counter = txt.split("\\s+");
               slovo = slovo + counter.length;
-              mezera += slovo -1;
-		  }
+              
 		System.out.println("Pocet mezer: " + mezera);
 		  System.out.println("Pocet slov: " + slovo);
 		
 		
 	}
 	  
-}
+}}
